@@ -1,0 +1,38 @@
+CREATE DATABASE vacunacion
+    WITH 
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Spain.1252'
+    LC_CTYPE = 'Spanish_Spain.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
+
+create table EMPLEADO (
+	ID_EMPLEADO          CHAR(36)           not null,
+	CEDULA               CHAR(10)           not null,
+	NOMBRE               VARCHAR(100)       not null,
+	APELLIDO             VARCHAR(100)       not null,
+	CORREO               VARCHAR(100)       not null,
+	FECHA_NACIMIENTO     TIMESTAMP        	null,
+	DIRECCION            VARCHAR(100)       null,
+	TELEFONO             VARCHAR(15)        null,
+	ESTADO_VACUNA        VARCHAR(15)         null,
+	TIPO_VACUNA 		 VARCHAR(50)        null,
+	FECHA_VACUNACION   	 TIMESTAMP          null,
+	NUMERO_DOSIS		 VARCHAR(2)			null,
+	USUARIO				 VARCHAR(15)		null,
+	PASS				 VARCHAR(100)		null,
+	ESTADO				 VARCHAR(1)			null,
+	
+   
+   constraint PK_EMPLEADO primary key (ID_EMPLEADO)
+);
+
+create table ADMINISTRADOR (
+	ID_ADMINISTRADOR     CHAR(36)      		not null,
+	USUARIO				 VARCHAR(15)		null,
+	PASS				 VARCHAR(100)		null,
+ constraint PK_ADMINISTRADOR primary key (ID_ADMINISTRADOR)
+);
+
+
